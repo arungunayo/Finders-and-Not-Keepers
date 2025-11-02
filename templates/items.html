@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Items</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <nav class="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
+    <h1 class="font-semibold text-lg text-gray-700">Lost & Found</h1>
+    <div class="space-x-6">
+      <a href="/" class="text-gray-600 hover:text-purple-600">Home</a>
+      <a href="/report-lost" class="text-gray-600 hover:text-purple-600">Report Lost</a>
+      <a href="/report-found" class="px-4 py-2 rounded-md bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium shadow hover:opacity-90">Report Found</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto py-10 px-6">
+    <h2 class="text-3xl font-bold mb-6">Browse Items</h2>
+
+    <form method="get" action="/items" class="flex space-x-4 mb-8">
+      <input type="text" name="search" value="{{ search }}" placeholder="Search items, locations, descriptions..." class="flex-1 border rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500">
+      <button class="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow">Search</button>
+    </form>
+
+    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+      {% for item in items %}
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+          <img src="{{ item.image_path }}" alt="{{ item.item_name }}" class="rounded-lg h-48 w-full object-cover mb-3">
+          <div class="flex justify-between items-center">
+            <h3 class="font-semibold text-lg">{{ item.item_name }}</h3>
+            <span class="px-2 py-1 text-sm rounded-full {% if item.item_type == 'lost' %}bg-pink-100 text-pink-600{% else %}bg-purple-100 text-purple-600{% endif %}">
+              {{ item.item_type }}
+            </span>
+          </div>
+          <p class="text-gray-600 text-sm mt-2">{{ item.description or "No description provided." }}</p>
+          <p class="text-gray-500 text-sm mt-2">📍 {{ item.location }}</p>
+          <a href="/item/{{ item.id }}" class="inline-block mt-3 text-purple-600 font-semibold hover:underline">View Details →</a>
+        </div>
+      {% else %}
+        <p class="text-gray-600">No items found.</p>
+      {% endfor %}
+    </div>
+  </main>
+
+</body>
+</html>

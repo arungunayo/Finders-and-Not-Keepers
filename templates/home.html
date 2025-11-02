@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lost & Found Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
+    <div class="flex items-center space-x-2">
+      <div class="bg-gradient-to-r from-purple-600 to-pink-500 p-2 rounded-md">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </div>
+      <span class="font-semibold text-lg text-gray-700">Lost & Found</span>
+    </div>
+    <div class="space-x-6">
+      <a href="/view-items" class="text-gray-600 hover:text-purple-600 font-medium">Browse Items</a>
+      <a href="/report-lost" class="text-gray-600 hover:text-purple-600 font-medium">Report Lost</a>
+      <a href="/report-found" class="px-4 py-2 rounded-md bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium shadow hover:opacity-90">Report Found</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="text-center py-20 bg-gradient-to-b from-purple-50 to-white">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+      Reunite with Your <span class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Lost Belongings</span>
+    </h1>
+    <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+      A community-driven platform to help people find what they’ve lost and return what they’ve found.
+    </p>
+    <div class="mt-8 flex justify-center space-x-4">
+      <a href="/view-items" class="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow hover:opacity-90">🔍 Search Items</a>
+      <a href="/report-lost" class="px-6 py-3 rounded-lg border border-gray-300 font-semibold hover:bg-gray-100">📝 Report an Item</a>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-center mb-4">How It Works</h2>
+    <p class="text-center text-gray-600 mb-12">Three simple steps to help reunite lost items with their owners</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold mb-4">1</div>
+        <h3 class="font-semibold text-lg mb-2">Report an Item</h3>
+        <p class="text-gray-600">Found or lost something? Create a report with details and photos.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold mb-4">2</div>
+        <h3 class="font-semibold text-lg mb-2">Search & Browse</h3>
+        <p class="text-gray-600">Look through reported items to find what you're looking for.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold mb-4">3</div>
+        <h3 class="font-semibold text-lg mb-2">Get Connected</h3>
+        <p class="text-gray-600">Contact the reporter to arrange the return of the item.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2025 Lost & Found Platform. Helping people reconnect with their belongings.
+  </footer>
+</body>
+</html>
